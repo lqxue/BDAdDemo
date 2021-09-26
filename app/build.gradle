@@ -1,0 +1,68 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+android {
+    compileSdkVersion 29
+    
+    defaultConfig {
+        applicationId "com.baidu.mobads.demo.main"
+        minSdkVersion 21
+        targetSdkVersion 29
+
+        ndk {
+            abiFilters 'armeabi-v7a','x86','arm64-v8a','x86_64','armeabi'
+        }
+        packagingOptions {
+
+            doNotStrip "*/armeabi-v7a/*.so"
+            doNotStrip "*/x86/*.so"
+            doNotStrip "*/arm64-v8a/*.so"
+            doNotStrip "*/x86_64/*.so"
+            doNotStrip "armeabi.so"
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+            assets.srcDirs = ['src/main/assets', 'src/main/assets/']
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+greendao {
+    schemaVersion 3
+    daoPackage 'com.baidu.mobads.demo.main.mediaExamples.novel.model.gen'
+    targetGenDir 'src/main/java'
+}
+
+dependencies {
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    implementation files ('libs/android-query-full.0.26.7.jar')
+    implementation(name:'Baidu_MobAds_SDK-release',ext:'aar')
+    implementation files ('libs/oaid_sdk_1.0.22.aar')
+    implementation 'org.greenrobot:greendao:3.2.0'
+    implementation "com.zqc.opencc.android.lib:lib-opencc-android:0.8.0@aar"
+    // RxJava
+    implementation "io.reactivex.rxjava2:rxandroid:2.0.1"
+    implementation "io.reactivex.rxjava2:rxjava:2.0.1"
+
+    implementation "com.jakewharton:butterknife:8.5.1"
+    annotationProcessor "com.jakewharton:butterknife-compiler:8.5.1"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+}

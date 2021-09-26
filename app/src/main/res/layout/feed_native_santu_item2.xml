@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="12dp"
+    android:id="@+id/rlTemplate"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:scaleType="centerCrop"
+        android:layout_width="36dp"
+        android:layout_height="36dp" />
+
+    <TextView
+        android:id="@+id/iv_brandname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="48dp"
+        android:hint="广告的品牌名称"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/steelblue" />
+
+    <TextView
+        android:id="@+id/iv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="标题"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:layout_below="@id/iv_brandname"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="48dp" />
+    <TextView
+        android:id="@+id/iv_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:hint="内容描述"
+        android:textColor="@color/darkgray"
+        android:layout_below="@id/iv_title"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="48dp" />
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="48dp"
+        android:layout_below="@id/iv_desc" >
+        <ImageView
+            android:id="@+id/iv_main1"
+            android:scaleType="fitXY"
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            android:layout_weight = "1"/>
+        <ImageView
+            android:id="@+id/iv_main2"
+            android:scaleType="fitXY"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            android:layout_weight = "1"/>
+        <ImageView
+            android:id="@+id/iv_main3"
+            android:scaleType="fitXY"
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            android:layout_weight = "1"/>
+    </LinearLayout>
+
+    <TextView
+        android:text="广告"
+        android:textSize="10sp"
+        android:textColor="@color/lightgray"
+        android:background="@drawable/raund_logo_bg"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:gravity="center"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="8dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

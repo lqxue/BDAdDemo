@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#fdfefa">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/refresh_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--<com.baidu.mobads.component.FeedPortraitVideoView-->
+        <!--android:id="@+id/feed_portrait_video"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+
+        <!--</com.baidu.mobads.component.FeedPortraitVideoView>-->
+        <RelativeLayout
+            android:id="@+id/feed_portrait_video"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </RelativeLayout>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <RelativeLayout
+        android:id="@+id/top_container"
+        android:background="@drawable/fade_square_bg_top"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:padding="16dp"
+        android:layout_height="56dp" >
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:src="@mipmap/ic_right_arrow"
+            android:rotationY="180"
+            android:scaleType="fitXY"
+            android:layout_width="24dp"
+            android:layout_height="24dp" />
+
+        <ImageView
+            android:id="@+id/test_volume"
+            android:src="@mipmap/volume_open"
+            android:scaleType="centerInside"
+            android:layout_alignParentRight="true"
+            android:layout_width="24dp"
+            android:layout_height="24dp" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/bottom_container"
+        android:background="@drawable/fade_square_bg_bottom"
+        android:layout_alignParentBottom="true"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:scaleType="centerInside"
+            android:src="@drawable/recmd_white_bidu"
+           android:layout_above="@id/iv_ad_title_bar"
+            android:layout_width="24dp"
+            android:layout_height="24dp" />
+
+        <TextView
+            android:id="@+id/iv_brandname"
+            android:layout_toRightOf="@id/iv_avatar"
+            android:layout_marginLeft="8dp"
+            android:gravity="center_vertical"
+            android:layout_above="@id/iv_ad_title_bar"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp" />
+
+        <TextView
+            android:text="广告"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:layout_toRightOf="@id/iv_brandname"
+            android:layout_marginLeft="8dp"
+            android:layout_above="@id/iv_ad_title_bar"
+            android:background="@drawable/tv_square_bg_red"
+            android:gravity="center"
+            android:layout_width="36dp"
+            android:layout_height="16dp"
+            android:layout_marginBottom="2dp"/>
+
+        <RelativeLayout
+            android:id="@+id/iv_ad_title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/vertical_video_new_layout">
+            <TextView
+                android:id="@+id/iv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1231321"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@id/iv_baidulogo"
+                android:layout_centerVertical="true" />
+
+            <ImageView
+                android:id="@+id/iv_baidulogo"
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:scaleType="fitXY"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/iv_adlogo"/>
+
+            <ImageView
+                android:id="@+id/iv_adlogo"
+                android:layout_width="25dp"
+                android:layout_height="13dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/vertical_video_new_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-6dp"
+            android:layout_marginTop="5dp"
+            android:layout_above="@id/vertical_video_say"
+            android:visibility="gone"
+           >
+            <TextView
+                android:id="@+id/vertical_video_version"
+                android:text="版本:1.01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:textColor="#fdfefa"/>
+            <TextView
+                android:id="@+id/vertical_video_publisher"
+                android:text="百度公司"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:textColor="#fdfefa"/>
+            <TextView
+                android:id="@+id/vertical_video_privacy"
+                android:text="隐私"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:textColor="#fdfefa"/>
+            <TextView
+                android:id="@+id/vertical_video_permission"
+                android:text="权限"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textColor="#fdfefa"/>
+        </LinearLayout>
+        <RelativeLayout
+            android:id="@+id/vertical_video_say"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/share"
+                android:src="@drawable/ic_video_btn_share"
+                android:layout_alignParentRight="true"
+                android:scaleType="centerInside"
+                android:layout_width="48dp"
+                android:layout_height="36dp" />
+
+            <ImageView
+                android:id="@+id/like"
+                android:src="@drawable/ic_video_btn_like"
+                android:scaleType="centerInside"
+                android:layout_marginRight="16dp"
+                android:layout_toLeftOf="@id/share"
+                android:layout_width="48dp"
+                android:layout_height="36dp" />
+
+            <ImageView
+                android:id="@+id/pinglun"
+                android:src="@drawable/ic_video_btn_pinglun"
+                android:scaleType="centerInside"
+                android:layout_marginRight="16dp"
+                android:layout_toLeftOf="@id/like"
+                android:layout_width="48dp"
+                android:layout_height="36dp" />
+
+            <TextView
+                android:text=" 说点什么..."
+                android:layout_centerVertical="true"
+                android:textColor="@color/whitesmoke"
+                android:background="@drawable/tv_square_bg_gray"
+                android:gravity="center_vertical"
+                android:layout_marginRight="16dp"
+                android:layout_toLeftOf="@id/pinglun"
+                android:layout_width="match_parent"
+                android:layout_height="32dp" />
+
+        </RelativeLayout>
+
+
+        <Button
+            android:id="@+id/stop_Restart"
+            android:alpha="0.4"
+            android:textSize="12sp"
+            android:layout_alignParentRight="true"
+            android:layout_above="@id/iv_ad_title_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="视频重播" />
+
+        <Button
+            android:id="@+id/video_play"
+            android:alpha="0.4"
+            android:textSize="12sp"
+            android:layout_toLeftOf="@id/stop_Restart"
+            android:layout_above="@id/iv_ad_title_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="测试播放" />
+    </RelativeLayout>
+</RelativeLayout>

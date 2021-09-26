@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.baidu.mobads.demo.main"
+    android:versionCode="1"
+    android:versionName="1.0">
+    <!-- SDK相关权限声明 -->
+    <!--  -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- targetSdkVersion >= 26 时需要配置此权限，否则无法进行安装app的动作 -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" /> <!-- 如果有视频相关的广告且使用textureView播放，请务必添加，否则黑屏 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:name=".MobadsApplication"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:logo="@mipmap/ic_sdk_logo"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon,android:label">
+        <activity android:name=".mediaExamples.hot.RecommendChannelActivity"
+            android:label="热榜推荐"></activity>
+        <activity android:name=".mediaExamples.hot.HotActivity" />
+        <activity
+            android:name=".mediaExamples.novel.ReadActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <meta-data
+            android:name="BaiduMobAd_APP_ID"
+            android:value="e866cfb0" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" /> <!-- 如果targetSdkVersion设置值>=24，则强烈建议添加以下provider，否则会影响app变现 -->
+        <!-- android:authorities="${packageName}.bd.provider" authorities中${packageName}部分必须替换成app自己的包名 -->
+        <!-- 原来的FileProvider在新版本中改为BdFileProvider,继承自v4的FileProvider,需要在应用内引用support-v4包 -->
+        <provider
+            android:name="com.baidu.mobads.openad.BdFileProvider"
+            android:authorities="com.baidu.mobads.demo.main.bd.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/bd_file_paths" />
+        </provider> <!-- <activity -->
+        <!-- android:name="com.baidu.mobads.AppActivity" -->
+        <!-- android:configChanges="screenSize|keyboard|keyboardHidden|orientation" -->
+        <!-- android:theme="@android:style/Theme.Translucent.NoTitleBar" -->
+        <!-- android:process=":webview"/> -->
+        <activity
+            android:name="com.baidu.mobads.AppActivity"
+            android:configChanges="screenSize|keyboard|keyboardHidden|orientation"
+            android:theme="@android:style/Theme.NoTitleBar" /> <!-- 实时开屏, 快捷接入 -->
+        <activity
+            android:name=".RSplashActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".BaiduSDKDemo"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".banner.BannerListActivity"
+            android:label="@string/simple_coding" /> <!-- 开屏完整示例，可根据需求拆分load和show的时机，也可直接loadAndShow -->
+        <activity
+            android:name=".RSplashManagerActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/splash"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".InterstitialAdActivity"
+            android:label="@string/simple_inters" />
+        <activity
+            android:name=".feeds.FeedAdActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden"
+            android:label="@string/feed" />
+        <activity
+            android:name=".feeds.FeedAdRecycleActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden"
+            android:label="@string/feed_recycle" />
+        <activity
+            android:name=".feeds.FeedH5.FeedH5ListViewActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden"
+            android:label="@string/feed_template"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".feeds.FeedH5.FeedH5LunBoActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden"
+            android:label="@string/feed_lunbo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".feeds.video.FeedVideoDemoActivity"
+            android:label="@string/feed_video" />
+        <activity
+            android:name=".feeds.video.FeedNativeVideoActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden"
+            android:label="@string/feed_video"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".feeds.video.FeedClickToVideoListViewActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityTheme.Full" />
+        <activity
+            android:name=".feeds.video.FeedPortraitVideoActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden"
+            android:label="@string/portrait_video"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityTheme.Full" />
+        <activity
+            android:name=".patchvideo.VideoPatchAdActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden"
+            android:label="@string/patch_ad" />
+        <activity
+            android:name=".CpuAdActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden"
+            android:label="@string/nrlm"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".jssdk.HybridInventoryActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden"
+            android:label="@string/jssdk"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".rewardvideo.RewardVideoActivity"
+            android:configChanges="keyboard|keyboardHidden|screenSize|orientation"
+            android:label="@string/reward_video"
+            android:process=":rewardvideo"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
+        <activity
+            android:name=".fullvideo.FullScreenVideoActivity"
+            android:configChanges="keyboard|keyboardHidden|screenSize|orientation"
+            android:label="@string/fullscreen_video"
+            android:process=":rewardvideo"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" /> <!-- 如果使用激励视频功能，并且是jar包集成，需要主动在AndroidManifest.xml里面申明MobRewardVideoActivity -->
+        <activity
+            android:name="com.baidu.mobads.production.rewardvideo.MobRewardVideoActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden"
+            android:launchMode="singleTask"
+            android:multiprocess="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".content.NativeContentAdActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden"
+            android:label="@string/content" />
+        <activity
+            android:name=".cpu.NativeCPUAdActivity"
+            android:label="@string/cpu_native" /> <!-- 内容联盟小视频，配置configChanges可以避免横竖屏切换时刷新数据 -->
+        <activity
+            android:name=".cpu.CpuVideoActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/cpu_video" />
+        <activity android:name=".search.InsiteActivity" /> <!-- 提供给媒体接入的示例，根据自身应用场景渲染不同的广告样式，提供曝光和点击的发送时机示例 -->
+        <activity
+            android:name=".mediaExamples.MediaExamplesActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/media_example" />
+        <activity
+            android:name=".mediaExamples.news.NewsDemoActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/news_example" />
+        <activity
+            android:name=".mediaExamples.news.NewsDetailsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/news_example_details"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".mediaExamples.utilsDemo.UtilsFeedsAdActivity"
+            android:label="@string/tools_example_list"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mediaExamples.utilsDemo.FinishAdActivity"
+            android:label="@string/tools_example_finish"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mediaExamples.utilsDemo.ClearAdActivity"
+            android:label="@string/tools_example_clear"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

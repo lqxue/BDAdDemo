@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="4dp"
+    android:background="#fdfefa"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/feeds_button_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="4dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_gravity="left"
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="广告位ID："
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp" />
+
+            <EditText
+                android:id="@+id/edit_apid"
+                android:inputType="number"
+                android:layout_width="match_parent"
+                android:layout_height="48dp" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_change_orientation"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:textSize="16sp"
+            android:text="横竖屏切换"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_load"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:textSize="16sp"
+            android:text="加载激励视频"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_show"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:textSize="16sp"
+            android:text="显示激励视频"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/is_ready"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:textSize="16sp"
+            android:text="isReady"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/test_load_show"
+            android:layout_width="250dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="3dp"
+            android:text="load+show"
+            android:textAllCaps="false"
+            android:visibility="gone" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, BaiduAndroid!</string>
+    <string name="app_name">百度网盟 Demo</string>
+    <!-- Mobads SDK Demo -->
+
+
+    <!-- <string name="simple_declaring">声明式横幅(Banner)广告</string> -->
+    <string name="simple_coding">横幅(Banner)广告示例</string>
+    <string name="simple_inters">插屏广告示例</string>
+    <string name="feed">信息流广告示例</string>
+    <string name="feed_recycle">信息流广告示例(Recycle)</string>
+    <string name="feed_smart_opt">信息流智能优选广告示例</string>
+    <string name="feed_video">信息流视频广告示例</string>
+    <string name="feed_template">信息流模版广告示例</string>
+    <string name="feed_lunbo">信息流轮播模版广告示例</string>
+    <string name="portrait_video">小视频广告示例</string>
+    <string name="simple_inters_for_video">视频插屏图片广告示例</string>
+    <string name="simple_icon">轮盘广告示例</string>
+    <string name="simple_recmad">推广墙示例</string>
+    <string name="video">视频广告 > 暂停视频广告</string>
+    <string name="advanced">高级应用 </string>
+    <string name="patch_ad">贴片广告示例</string>
+    <string name="reward_video">激励视频广告示例</string>
+    <string name="fullscreen_video">全屏视频广告示例</string>
+    <string name="preroll_video">前贴片广告示例</string>
+    <string name="preroll_native">前贴片原生示例</string>
+    <string name="nrlm">内容联盟示例</string>
+    <string name="cpu_native">内容联盟原生示例</string>
+    <string name="cpu_video">内容小视频示例</string>
+    <string name="dubao">悬浮度宝示例</string>
+    <string name="dubaoView">嵌入度宝示例</string>
+    <string name="chuilei">垂类示例</string>
+    <string name="content">内容位广告示例</string>
+    <string name="jssdk">JSSDK示例</string>
+
+    <string name="permissions_list">权限申请</string>
+    <string name="request_phone_state">读取设备信息权限</string>
+    <string name="request_storage">读写外部存储权限</string>
+    <string name="request_location">获取粗略定位权限</string>
+    <string name="request_app_list">读取应用列表权限</string>
+    <string name="loadandshow">loadAndShow</string>
+    <string name="load">load</string>
+    <string name="load_bg">loadInBackground</string>
+    <string name="show">show</string>
+    <string name="state">开屏广告</string>
+    <string name="splash">开屏广告示例</string>
+    <string name="media_example">媒体接入示例</string>
+    <string name="tools_example">工具类接入示例</string>
+    <string name="book_example">书籍类接入示例</string>
+    <string name="news_example">资讯类接入示例</string>
+    <string name="news_example_details">资讯类详情页示例</string>
+    <string name="tools_example_list">信息流工具类demo实例</string>
+    <string name="tools_example_finish">信息流工具类结束时实例</string>
+    <string name="tools_example_clear">信息流工具类清理完成时实例</string>
+    <string name="nb.read.brief">简介</string>
+    <string name="nb.read.community">社区</string>
+    <string name="nb.read.category">目录</string>
+    <string name="nb.read.no_chapter">第 %1$d 章(%2$d)</string>
+    <!--mode-->
+    <string name="nb.mode.night">夜间</string>
+    <string name="nb.mode.morning">日间</string>
+    <string name="nb.read.setting">设置</string>
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+</resources>
